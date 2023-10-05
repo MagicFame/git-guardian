@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  width: 80%;
+  margin: 2% auto;
+}
+
+.infos {
+  flex-grow: 2;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.top-repos {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}

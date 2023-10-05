@@ -1,0 +1,55 @@
+{
+  "name": "frontend-interview-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.0.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "recharts": "^2.3.1"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "test": "jest --watch"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/src/styleMock.js"
+    },
+    "testEnvironment": "jsdom"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@vitejs/plugin-react": "^3.0.1",
+    "babel-jest": "^29.3.1",
+    "eslint-config-prettier": "^8.0.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.6.2",
+    "jsdom": "^21.0.0",
+    "prettier": "^2.1.2",
+    "vite": "^4.0.4"
+  }
+}

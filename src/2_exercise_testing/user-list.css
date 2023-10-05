@@ -1,0 +1,63 @@
+.hstack {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  row-gap: 0.5rem;
+}
+
+.user-info {
+  background-color: #edf2f7;
+  padding: 0.5rem;
+}
+
+.user-info:hover {
+  background-color: #cbd5e0;
+  cursor: pointer;
+}
+
+.user-list {
+  margin: 0;
+  width: 600px;
+  margin-left: 1rem;
+  padding: 1rem;
+  border: 1px #a0aec0;
+  border-radius: 0.375rem;
+}
+
+button[type='submit'] {
+  color: white;
+  background-color: #38a169;
+  align-self: flex-start;
+  padding: 2px 12px;
+  align-items: center;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  height: 2rem;
+}
+
+button[type='submit']:hover {
+  background-color: #2f855a;
+}
+
+button[type='submit']:active {
+  background-color: #246044;
+}
+
+.form-content {
+  padding: 2px;
+}
+
+.form-content input {
+  width: 300px;
+  font-size: 0.875rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  border: 1px solid #e3e9f2;
+}
+
+.form-content input:hover {
+  border-color: #c8d3de;
+}
