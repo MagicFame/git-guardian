@@ -22,14 +22,14 @@ const reducer = (state, action) => {
     case 'edit_event':
       return {
         ...state,
-        events: state.events.map((event) => {
-          console.log(event, action)
-          if (event.index === action.index) {
-            return action.editedEvent
-          }
-          return event
-        }),
+        events: state.events.map((event, index) =>
+          index === action.editedIndex ? action.editedEvent : event
+        ),
       }
+    case 'reset_events':
+      // I cannot reset the index to 50 on reset event
+      // because I am not allowed to edit the Container.jsx file
+      return initialState
     default:
       return state
   }

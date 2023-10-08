@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cell = ({ index, children, dispatch }) => {
+const Cell = ({ children, onChangeCell, event, valueType }) => {
   const [isEditing, setIsEditing] = React.useState(false)
   return (
     <div
@@ -22,46 +22,62 @@ const Cell = ({ index, children, dispatch }) => {
           width: '60px',
           height: '40px',
         }}
+        id={`cell-${valueType ?? ''}-${event ? event.index : ''}`}
         onChange={(e) => {
           e.stopPropagation()
-          dispatch({
-            type: 'edit_event',
-            index,
-          })
+          if (onChangeCell) {
+            const editedEvent = {
+              ...event,
+              [valueType]: isNaN(e.target.value) ? 0 : Number(e.target.value),
+            }
+            onChangeCell(event.index, editedEvent)
+          }
         }}
       />
     </div>
   )
 }
 
-export const LiveTable = ({ data, dispatch, ...props }) => {
+export const LiveTable = ({ data, onChangeCell, ...props }) => {
+  const VALUE_1 = 'value1'
+  const VALUE_2 = 'value2'
   return (
     <div {...props}>
       <div style={{ height: '42px', overflow: 'hidden' }}>
-        <Cell dispatch={dispatch}>Index</Cell>
+        <Cell>Index</Cell>
         {data.map((event) => {
           return (
-            <Cell dispatch={dispatch} key={event.index} index={event.index}>
+            <Cell key={event.index} index={event.index}>
               {event.index}
             </Cell>
           )
         })}
       </div>
       <div style={{ height: '42px', overflow: 'hidden' }}>
-        <Cell dispatch={dispatch}>Value 1</Cell>
+        <Cell>Value 1</Cell>
         {data.map((event) => {
           return (
-            <Cell dispatch={dispatch} key={event.index} index={event.index}>
+            <Cell
+              onChangeCell={onChangeCell}
+              key={event.index}
+              event={event}
+              valueType={VALUE_1}
+            >
               {event.value1}
             </Cell>
           )
         })}
       </div>
       <div style={{ height: '42px', overflow: 'hidden' }}>
-        <Cell dispatch={dispatch}>Value 2</Cell>
+        <Cell>Value 2</Cell>
         {data.map((event) => {
           return (
-            <Cell dispatch={dispatch} key={event.index} index={event.index}>
+            <Cell
+              onChangeCell={onChangeCell}
+              key={event.index}
+              event={event}
+              valueType={VALUE_2}
+            >
               {event.value2}
             </Cell>
           )

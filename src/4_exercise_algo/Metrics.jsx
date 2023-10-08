@@ -3,15 +3,8 @@ import React from 'react'
 import { now, roundDecimals } from './utils'
 import data from './data.json'
 
-// TODO: implement this function
 export const computeMetrics = ({ users, cars, insurances }) => {
-  return {
-    uniqueUsers: 0,
-    nbUsersOutdatedInsurances: 0,
-    usersWithManyCars: 0,
-    usersAverageAge: 0,
-    mostOwnedCarOwners: 0,
-  }
+  return {}
 }
 
 export const Metrics = () => {

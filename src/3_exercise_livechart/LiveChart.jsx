@@ -5,7 +5,7 @@ export const LiveChart = ({ boxProps, data, onChartClick }) => {
   return (
     <div {...boxProps}>
       <AreaChart
-        onClick={(e) => onChartClick(e.activeTooltipIndex)}
+        onClick={(e) => onChartClick(e?.activeLabel)}
         width={1400}
         height={250}
         data={data}
